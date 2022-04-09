@@ -1,0 +1,11 @@
+version: "3"
+services: 
+  django-apache2:
+    build: .
+    container_name: django_portfolio
+    ports:
+      - '8081:80'
+      - '3001:3500'
+      - '4101:81'
+    volumes: 
+      - ./www:/var/www/html

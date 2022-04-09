@@ -1,0 +1,43 @@
+{%load static%}
+
+{#<link rel="stylesheet" type="text/css" href="static/style/style4.css">#}
+{#<link rel="stylesheet" type="text/css" href="static/style/my_tl_style.css">#}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/main_style.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/timeline_style.css'%}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<html>
+
+<body>
+<div class="pagewrap">
+
+    <main id="main-content" class="page-body page-body--header" tabindex="-1">
+
+    {% block content %} {% endblock %}
+
+<section class="footer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="https://github.com/robertmoga/"><i class="icon ion-social-github"></i></a>
+                <a href="https://www.linkedin.com/in/robertmoga/"><i class="icon ion-social-linkedin"></i></a>
+                <a href="https://www.instagram.com/robertmoga16/"><i class="icon ion-social-instagram"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="https://robertmoga.com">Home</a></li>
+                <br>
+                <li class="list-inline-item"><a href="mailto:robertmoga16@gmail.com">robertmoga16@gmail.com</a></li>
+
+            </ul>
+            <p class="copyright">Robert Moga © 2022</p>
+        </footer>
+    </div>
+
+</section>
+
+</body>
+
+
+</html>

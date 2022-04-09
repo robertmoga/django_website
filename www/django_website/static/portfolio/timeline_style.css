@@ -1,0 +1,110 @@
+.box-timeline {
+    margin: 0 10%;
+    overflow: hidden;
+    padding: 10px 0 40px 100px;
+    font-family: arial
+}
+
+.box-timeline ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    font-size: 1.5rem;
+    box-shadow: 5;
+}
+
+.box-timeline ul:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border: 1px dashed var(--subtext);
+    position: absolute;
+    top: 0;
+    left: 30px;
+}
+
+.box-timeline ul li {
+    margin: 20px 60px 60px;
+    position: relative;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--text);
+    border-radius: 15px;
+    line-height: 20px;
+    width: 80%;
+    font-size: 120%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box-timeline ul li:hover {
+    transform: scale(1.05) translateZ(0);
+    transition: filter 200ms linear, transform 200ms linear;
+}
+
+.box-timeline ul li>span {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border: 1px solid var(--subtext);
+    position: absolute;
+    top: 0;
+    left: -30px
+}
+
+.box-timeline ul li>span:before,
+.box-timeline ul li>span:after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 7px solid var(--subtext);
+    position: absolute;
+    left: -7px
+}
+
+.box-timeline ul li>span:before {
+    top: -10px
+}
+
+.box-timeline ul li>span:after {
+    top: 95%
+}
+
+.box-timeline h2 {
+    margin-bottom: 5px;
+    font-size: 130%
+}
+
+.box-timeline .timeline-info:first-letter {
+    text-transform: capitalize;
+    line-height: 1.8;
+}
+
+.box-timeline .timeline-name {
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-style: italic;
+    text-align: right;
+    margin-right: 20px
+}
+
+.box-timeline .timeline-time span {
+    position: absolute;
+    left: -120px;
+    color: var(--subtext);
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.box-timeline .timeline-time span:first-child {
+    top: -15px
+}
+
+.box-timeline .timeline-time span:last-child {
+    top: 94%
+}

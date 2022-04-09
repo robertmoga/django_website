@@ -1,0 +1,154 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block content %}
+        <!-- Intro -->
+        <div class="section">
+            <div style="position: relative; transform: translate3d(0px, 0px, 0px);" data-prlx="0 -0.125">
+                <div class="avatar-bg">
+                    <div class="avatar-wrap">
+                        <div class="avatar avatar--intro avatar_intro">
+                            <div class="layer">
+                                <img src="{% static 'portfolio/avatar.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <header class="page-header page-header--masthead">
+                <div class="page-header__inr">
+                    <div class="page-header__content is-onscreen" data-prlx="0 0.25"
+                         style="position: relative; transform: translate3d(0px, 0px, 0px);">
+
+                        <h1 class="page-header__title lh-tight t-primary t-outline">Hi, my ​<br>name is
+                            <b>Robert</b><span class="dot">.</span>
+                        </h1>
+                        <p class="page-header__lede lh-loose t-primary u-hide:s u-hide:m">Passionate <b> machine
+                            learning
+                            engineer </b> based in Cluj-Napoca, Romania.</p>
+
+                        <span class="page-header__scroll" aria-hidden="true"><span><span>S</span> <span>c</span>
+                            <span>r</span> <span>o</span> <span>l</span>
+                            <span>l</span></span>
+                            </span>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- End Intro -->
+
+        <!-- About -->
+
+
+        <div class="panels" data-reveal="is-onscreen" data-offset="1211">
+            <div class="panels__main">
+                <div class="article-heading">
+                    <h2 class="article-heading__title t-heading t-medium:s t-big:m t-bigger:l">
+                            <span> About me
+                                <span class="dot">.</span>
+                            </span>
+                        <div class="module-line"></div>
+                    </h2>
+                </div>
+
+                <div class="flow reveal-content">
+                    <p>
+                        Hi! My name is Robert and I enjoy driving insights from data. I am a machine learning engineer
+                        based in Cluj-Napoca, Romania, currently working with <a href="http://qwertee.io">Qwertee.io</a>
+                        to power data extraction at the
+                        intersection of computer vision and GNSS systems.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panels" data-reveal="is-onscreen" data-offset="1211">
+            <div class="panels__main">
+                <div class="dot-header">
+                    <h2 class="t-heading t-lede:s t-medium:m t-medium:l">Projects<span class="dot">.</span></h2>
+                    <br>
+                    <p> I myself benefited along the time by the efforts of other developers that open-sourced their
+                        work, so I whenever I have the ocassion I publish my work to support the comunity, either be it
+                        a small project or an article. </p>
+
+
+                    <!-- insert projects showcase -->
+                    <section class="hero-section">
+                        <div class="card-grid">
+                            {% for post in posts %}
+                                <a class="card" href="{% url 'post-detail' post.id %}">
+                                    <div class="card__background"
+                                         style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+                                    </div>
+                                    <div class="card__content">
+                                        <p class="card__category">Category</p>
+                                        <h3 class="card__heading">Example Card Heading</h3>
+                                    </div>
+                                 </a>
+                            {% endfor %}
+                                                                        <a href="https://github.com/robertmoga/" class="btn"><span
+                                        class="btn__label">Check out my Github!</span> <span
+                                        class="btn__fill stripes"
+                                        style="transform: translate(-6.75px, 7.97468px);"></span></a>
+                        </div>
+
+
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panels" data-reveal="is-onscreen" data-offset="1211">
+            <div class="panels__main">
+                <div class="dot-header">
+                    <h2 class="t-heading t-lede:s t-medium:m t-medium:l">Experience<span class="dot">.</span></h2>
+                    <br>
+                    <p>I had the ocassion to work on some amazing projects up until now along various teams. </p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- timeline -->
+
+        <div class="box-timeline">
+            <ul>
+                {% for job_item in jobs %}
+                    <li>
+                        <span></span>
+                        <h2 class="t-heading t-medium:s ">
+                            <div class="text-hover-effect">{{ job_item.title }}<span class="dot">.</span> </div>
+
+                        </h2>
+                        <h3 class="t-heading t-medium:s"> {{ job_item.company_name }}</h3>
+                        <br>
+                        <div class="timeline-info"> {{ job_item.description }}
+                        </div>
+                        <div class="timeline-time">
+                            {% if job_item.on_going %}
+                                <span>Present</span>
+                            {% else %}
+                                <span>{{ job_item.end_date }}</span>
+                            {% endif %}
+                            <span>{{ job_item.start_date }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+
+
+
+            </ul>
+
+        </div>
+
+
+    </main>
+</div>
+
+
+</div>
+{% endblock content %}
